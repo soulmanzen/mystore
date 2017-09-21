@@ -1,0 +1,19 @@
+<config>
+    <modules>
+        <Stas_Info>
+            <version>0.1.0</version>
+        </Stas_Info>
+    </modules>
+
+    <frontend>
+        <routers>
+            <info>
+                <use>standard</use>
+                <args>
+                    <module>Stas_Info</module>
+                    <frontName>info</frontName>
+                </args>
+            </info>
+        </routers>
+    </frontend>
+</config>
