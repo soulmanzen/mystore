@@ -16,4 +16,16 @@
             </info>
         </routers>
     </frontend>
+
+    <global>
+        <resources>
+            <stasinfo_setup>
+                <setup>
+                    <module>Stas_Info</module>
+                    <class>Stas_Info_Model_Resource_Setup</class>
+                </setup>
+            </stasinfo_setup>
+        </resources>
+    </global>
+
 </config>
