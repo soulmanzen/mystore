@@ -3,7 +3,11 @@ $installer = $this;
 
 $installer->startSetup();
 
-$table = $installer->getConnection()->newTable($installer->getTable('stasinfo/my_feedback'))
+$tableName = $installer->getTable('stasinfo/myfeedback');
+
+$installer->getConnection()->dropTable($tableName);
+
+$table = $installer->getConnection()->newTable($tableName)
     ->addColumn('feedback_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
         'unsigned' => true,
         'nullable' => false,
@@ -23,6 +27,7 @@ $table = $installer->getConnection()->newTable($installer->getTable('stasinfo/my
     ->addColumn('status', Varien_Db_Ddl_Table::TYPE_TINYINT, null, array(
     ), 'Status')
     ->addColumn('timestamp', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
+        'default' => Varien_Db_Ddl_Table::TIMESTAMP_INIT
     ), 'Timestamp');
 
 $installer->getConnection()->createTable($table);
